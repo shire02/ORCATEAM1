@@ -19,7 +19,7 @@ namespace ORCA.Controllers
         private ApplicationUserManager _userManager;
 
         //might need this when changing register controller
-        //private DefaultConnection db = new DefaultConnection();
+        private DefaultConnection db = new DefaultConnection();
 
         public AccountController()
         {
@@ -157,12 +157,12 @@ namespace ORCA.Controllers
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
 
                 //maybe need this for when we wanna edit register process
-                //var user2 = new User { ID = model2.ID, Email = model2.Email, FirstName = model2.FirstName, LastName = model2.LastName};
+                var user2 = new User { ID = model2.ID, Email = model2.Email, FirstName = model2.FirstName, LastName = model2.LastName};
 
                 var result = await UserManager.CreateAsync(user, model.Password);
 
-                //db.Users.Add(user2);
-                //db.SaveChanges();
+                db.Users.Add(user2);
+                db.SaveChanges();
 
                 if (result.Succeeded)
                 {
