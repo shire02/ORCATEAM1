@@ -9,7 +9,7 @@ namespace ORCA.Models
     {
 
         //missing image and becameExpert flag for this table
-        // we may need photo
+        
         public int ID { get; set; }
         public string Title { get; set; }
         public string Category { get; set; }
