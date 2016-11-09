@@ -9,6 +9,7 @@ namespace ORCA.Models
     {
 
         //we are still missing created date for this table
+        // new change
         public string TickId { get; set; }
         public int ID { get; set; }
         public string Subject { get; set; }
